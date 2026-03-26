@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Myntra Clone</title>
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+
+<header>
+    <div class="Logo">
+        <a href="#">
+            <img class="MyntraHome" src="./image123/logoM.jpg" alt="MyntraHome">
+        </a>
+    </div>
+
+    <nav class="NavBar">
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Home Living</a>
+        <a href="#">Beauty</a>
+        <a href="#">Studio <sup>New</sup></a>
+    </nav>
+
+    <div class="searchBar">
+        <span class="material-symbols-outlined icon">search</span>
+        <input class="input" placeholder="Search for products, brands and more">
+    </div>
+
+    <div class="ActionBar">
+        <div class="ActionContainer"  onclick="loginUser">
+            <span class="material-symbols-outlined">person</span>
+            <span class="ActionNAME">Profile</span>
+        </div>
+        <div class="ActionContainer">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="ActionNAME">Wishlist</span>
+        </div>
+        <div class="ActionContainer" onclick="toggleCart()" style="cursor:pointer; position:relative;">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="ActionNAME">Bag</span>
+            <span class="bagItemCount" id="bagCount">0</span>
+        </div>
+    </div>
+</header>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h2>My Bag 🛍️</h2>
+        <span class="cart-close" onclick="toggleCart()">✕</span>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Total MRP</span>
+                <span id="totalMRP">₹0</span>
+            </div>
+            <div class="summary-row">
+                <span>Discount on MRP</span>
+                <span id="totalDiscount" style="color:#03a685;">-₹0</span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery Charges</span>
+                <span style="color:#03a685;font-weight:600;">FREE</span>
+            </div>
+            <hr class="summary-hr">
+            <div class="summary-row total-row">
+                <span>Total Amount</span>
+                <span id="totalAmount">₹0</span>
+            </div>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">PLACE ORDER</button>
+        <!-- ================track -->
+         <h3>Order Tracking</h3>
+
+<p id="deliveryDate"></p>
+<p id="status"></p>
+    </div>
+</div>
+
+<!-- Main Section -->
+<main>
+
+<div class="Bannercontainer">
+    <div class="BannerLeft">
+        <img src="./image123/1234.avif" alt="Main Banner">
+    </div>
+    <div class="BannerText">
+        <h1>Big Fashion Sale</h1>
+        <h3>Up to 80% OFF</h3>
+        <button class="shopBtn">Shop Now</button>
+    </div>
+</div>
+
+<!-- ========== WOMEN SECTION ========== -->
+<div class="category_heading">Medal Worthy Brands and Athenic Wear</div>
+
+<div class="category_items">
+
+    <div class="product">
+        <a href="#"><img src="./image123/Redyy.jpg"></a>
+        <div class="rating1">4.5 🌟 | 1.8k</div>
+        <h4>H&amp;M</h4>
+        <p>Women Stylish Top</p>
+        <div class="price">
+            <span class="new">₹499</span>
+            <span class="old">₹999</span>
+            <span class="off">50% OFF</span>
+            <button class="btn-atb" data-id="p1" data-name="H&amp;M - Women Stylish Top" data-price="499" data-mrp="999">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image/pinky.jpg"></a>
+        <div class="rating1">4.1 🌟 | 2.8k</div>
+        <h4>Zara</h4>
+        <p>Pink Party Dress</p>
+        <div class="price">
+            <span class="new">₹799</span>
+            <span class="old">₹1499</span>
+            <span class="off">45% OFF</span>
+            <button class="btn-atb" data-id="p2" data-name="Zara - Pink Party Dress" data-price="799" data-mrp="1499">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/sharra.jpg"></a>
+        <div class="rating1">3.5 🌟 | 3.8k</div>
+        <h4>Biba</h4>
+        <p>Ethnic Wear</p>
+        <div class="price">
+            <span class="new">₹999</span>
+            <span class="old">₹1999</span>
+            <span class="off">50% OFF</span>
+            <button class="btn-atb" data-id="p3" data-name="Biba - Ethnic Wear" data-price="999" data-mrp="1999">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/shimmer.jpg"></a>
+        <div class="rating1">5.5 🌟 | 3.8k</div>
+        <h4>Forever 21</h4>
+        <p>Shimmer Dress</p>
+        <div class="price">
+            <span class="new">₹699</span>
+            <span class="old">₹1299</span>
+            <span class="off">46% OFF</span>
+            <button class="btn-atb" data-id="p4" data-name="Forever 21 - Shimmer Dress" data-price="699" data-mrp="1299">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/princess.jpg"></a>
+        <div class="rating1">2.5 🌟 | 1.8k</div>
+        <h4>ONLY</h4>
+        <p>Princess Dress</p>
+        <div class="price">
+            <span class="new">₹899</span>
+            <span class="old">₹1599</span>
+            <span class="off">44% OFF</span>
+            <button class="btn-atb" data-id="p5" data-name="ONLY - Princess Dress" data-price="899" data-mrp="1599">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/purplrD.jpg"></a>
+        <div class="rating1">5.5 🌟 | 3.8k</div>
+        <h4>Roadster</h4>
+        <p>Purple Dress</p>
+        <div class="price">
+            <span class="new">₹599</span>
+            <span class="old">₹1199</span>
+            <span class="off">50% OFF</span>
+            <button class="btn-atb" data-id="p6" data-name="Roadster - Purple Dress" data-price="599" data-mrp="1199">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/frock.jpg"></a>
+        <div class="rating1">3.5 🌟 | 5.8k</div>
+        <h4>DressBerry</h4>
+        <p>Casual Frock</p>
+        <div class="price">
+            <span class="new">₹549</span>
+            <span class="old">₹999</span>
+            <span class="off">45% OFF</span>
+            <button class="btn-atb" data-id="p7" data-name="DressBerry - Casual Frock" data-price="549" data-mrp="999">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/Orange.jpg"></a>
+        <div class="rating1">3.5 🌟 | 2.8k</div>
+        <h4>Tokyo Talkies</h4>
+        <p>Orange Top</p>
+        <div class="price">
+            <span class="new">₹399</span>
+            <span class="old">₹799</span>
+            <span class="off">50% OFF</span>
+            <button class="btn-atb" data-id="p8" data-name="Tokyo Talkies - Orange Top" data-price="399" data-mrp="799">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/Silver.jpg"></a>
+        <div class="rating1">5.5 🌟 | 4.8k</div>
+        <h4>Global Desi</h4>
+        <p>Silver Party Wear</p>
+        <div class="price">
+            <span class="new">₹1099</span>
+            <span class="old">₹1999</span>
+            <span class="off">45% OFF</span>
+            <button class="btn-atb" data-id="p9" data-name="Global Desi - Silver Party Wear" data-price="1099" data-mrp="1999">Add to Bag</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <a href="#"><img src="./image123/sari.jpg"></a>
+        <div class="rating1">4.5 🌟 | 1.8k</div>
+        <h4>Libas</h4>
+        <p>Designer Saree</p>
+        <div class="price">
+            <span class="new">₹1299</span>
+            <span class="old">₹2499</span>
+            <span class="off">48% OFF</span>
+            <button class="btn-atb" data-id="p10" data-name="Libas - Designer Saree" data-price="1299" data-mrp="2499">Add to Bag</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== MEN SECTION ========== -->
+<div class="category_heading">Medal Worthy Shirts with Best Brands</div>
+
+<div class="category_Menitems_img">
+
+    <div class="product_card">
+        <img src="./image123/maroon.jpg">
+        <div class="rating1">4.5 🌟 | 1.8k</div>
+        <h4>Maroon Shirt</h4>
+        <p class="price">₹799 <span>₹1299</span></p>
+        <p class="offer">38% OFF</p>
+        <button class="btn-atb" data-id="m1" data-name="Maroon Shirt" data-price="799" data-mrp="1299">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/mix.jpg">
+        <div class="rating1">3.5 🌟 | 5.8k</div>
+        <h4>Casual Mix Shirt</h4>
+        <p class="price">₹699 <span>₹1199</span></p>
+        <p class="offer">42% OFF</p>
+        <button class="btn-atb" data-id="m2" data-name="Casual Mix Shirt" data-price="699" data-mrp="1199">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/offficem.jpg">
+        <div class="rating1">5.5 🌟 | 5.8k</div>
+        <h4>Office Formal Shirt</h4>
+        <p class="price">₹999 <span>₹1599</span></p>
+        <p class="offer">37% OFF</p>
+        <button class="btn-atb" data-id="m3" data-name="Office Formal Shirt" data-price="999" data-mrp="1599">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/suit.jpg">
+        <div class="rating1">8.5 🌟 | 5.8k</div>
+        <h4>Classic Suit</h4>
+        <p class="price">₹1999 <span>₹2999</span></p>
+        <p class="offer">33% OFF</p>
+        <button class="btn-atb" data-id="m4" data-name="Classic Suit" data-price="1999" data-mrp="2999">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/blackking.jpg">
+        <div class="rating1">4.5 🌟 | 5.8k</div>
+        <h4>Black King Shirt</h4>
+        <p class="price">₹899 <span>₹1499</span></p>
+        <p class="offer">40% OFF</p>
+        <button class="btn-atb" data-id="m5" data-name="Black King Shirt" data-price="899" data-mrp="1499">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/beigeShirt.avif">
+        <div class="rating1">3.5 🌟 | 2.8k</div>
+        <h4>Beige Casual Shirt</h4>
+        <p class="price">₹749 <span>₹1199</span></p>
+        <p class="offer">37% OFF</p>
+        <button class="btn-atb" data-id="m6" data-name="Beige Casual Shirt" data-price="749" data-mrp="1199">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/green.jpg">
+        <div class="rating1">6.5 🌟 | 5.8k</div>
+        <h4>Green Stylish Shirt</h4>
+        <p class="price">₹799 <span>₹1399</span></p>
+        <p class="offer">43% OFF</p>
+        <button class="btn-atb" data-id="m7" data-name="Green Stylish Shirt" data-price="799" data-mrp="1399">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/line.jpg">
+        <div class="rating1">2.5 🌟 | 2.7k</div>
+        <h4>Line Pattern Shirt</h4>
+        <p class="price">₹699 <span>₹1099</span></p>
+        <p class="offer">36% OFF</p>
+        <button class="btn-atb" data-id="m8" data-name="Line Pattern Shirt" data-price="699" data-mrp="1099">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/chax.jpg">
+        <div class="rating1">3.5 🌟 | 5.8k</div>
+        <h4>Check Shirt</h4>
+        <p class="price">₹899 <span>₹1399</span></p>
+        <p class="offer">35% OFF</p>
+        <button class="btn-atb" data-id="m9" data-name="Check Shirt" data-price="899" data-mrp="1399">Add to Bag</button>
+    </div>
+
+    <div class="product_card">
+        <img src="./image123/RedDDit.jpg">
+        <div class="rating1">1.5 🌟 | 2.8k</div>
+        <h4>Red Casual Shirt</h4>
+        <p class="price">₹749 <span>₹1299</span></p>
+        <p class="offer">42% OFF</p>
+        <button class="btn-atb" data-id="m10" data-name="Red Casual Shirt" data-price="749" data-mrp="1299">Add to Bag</button>
+    </div>
+
+</div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div>
+      <h4>Useful Links</h4>
+      <p>About Us</p>
+      <p>Careers</p>
+      <p>Contact Us</p>
+    </div>
+    <div>
+      <h4>Customer Policies</h4>
+      <p>Return Policy</p>
+      <p>Privacy Policy</p>
+      <p>Terms of Use</p>
+    </div>
+    <div>
+      <h4>Shopping</h4>
+      <p>Men</p>
+      <p>Women</p>
+      <p>Kids</p>
+      <p>Jwelery</p>
+      <p>Western wear</p>
+      <p>Ethneic</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Myntra Clone | Designed by Tanisha</p>
+</footer>
+
+<script src="./Script.js"></script>
+ 
+</body>
+</html> 
